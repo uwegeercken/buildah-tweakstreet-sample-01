@@ -1,0 +1,253 @@
+{
+  "type": "data-flow",
+  "appVersion": "1.13.0",
+  "properties": {
+    "meta": {},
+    "editor": {},
+    "imports": {
+      "code": "# import the standard library\n# import core, data, strings, time, math, fun, locale, regex, bin, decimals from 'std';\n"
+    },
+    "parameters": {
+      "parameters": {
+        "list": []
+      }
+    },
+    "variables": {
+      "variables": {
+        "list": []
+      }
+    },
+    "services": {
+      "services": {
+        "list": []
+      }
+    }
+  },
+  "steps": [
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.logger_5ac8e140-8d43-486b-9c6f-4ab3b6ffdc6f",
+      "name": "Logger",
+      "type": "com.twineworks.tweakstreet.library.steps.map.logger",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Logger",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "message": {
+          "widgetType": "expression/text",
+          "widgetData": {
+            "text": "Log info from the docker image",
+            "size": {
+              "width": 0,
+              "height": 68
+            },
+            "syntax": "text",
+            "lineSeparator": "\n",
+            "interpolation": true
+          },
+          "code": "'Log info from the docker image'"
+        },
+        "logValues": {
+          "widgetType": "expression/data-grid",
+          "widgetData": {
+            "fields": [
+              {
+                "id": "name",
+                "name": "name"
+              },
+              {
+                "id": "value",
+                "name": "value"
+              }
+            ],
+            "gen": {
+              "as": "rows",
+              "of": "dict",
+              "meta": false
+            },
+            "table": {
+              "list": [
+                {
+                  "fields": {
+                    "name": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": "row_nr"
+                      },
+                      "code": "'row_nr'"
+                    },
+                    "value": {
+                      "widgetType": "expression/field-value-ref",
+                      "widgetData": {
+                        "fieldSelect": {
+                          "value": {
+                            "gate": "in",
+                            "name": "row_nr"
+                          }
+                        }
+                      },
+                      "code": "::in.row_nr"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "code": "[{\n  :name 'row_nr',\n  :value ::in.row_nr\n}]"
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 522,
+        "y": 170
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.flatmap.generaterows_64165feb-f50f-416b-b420-54ebdc7bb837",
+      "name": "Generate Rows",
+      "type": "com.twineworks.tweakstreet.library.steps.flatmap.generaterows",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Generate Rows",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "nrRows": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "10"
+          },
+          "code": "10"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "row_nr",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/result-ref",
+                  "widgetData": {
+                    "value": "::results.row_nr"
+                  },
+                  "code": "::results.row_nr"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 250,
+        "y": 170
+      }
+    }
+  ],
+  "hops": [
+    {
+      "id": "93163da7-f18d-4df9-b09b-377b7d66b0be",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.flatmap.generaterows_64165feb-f50f-416b-b420-54ebdc7bb837",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.logger_5ac8e140-8d43-486b-9c6f-4ab3b6ffdc6f",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    }
+  ]
+}
