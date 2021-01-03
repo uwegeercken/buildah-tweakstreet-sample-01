@@ -4,7 +4,6 @@ tweakstreet_home="/home/tweakstreet"
 
 image_registry="silent1:8083"
 image_registry_group="silent1:8082"
-image_registry_user="admin"
 
 # base image
 base_image_name="tweakstreet-base"
@@ -19,16 +18,14 @@ image_author="uwe.geercken@web.de"
 # name of working container
 working_container="${image_name}-working-container"
 
-# local folder containing flows, modules, etc.
+# local folders
 flows_folder="flows"
-
-# container folder for flows, modules, etc.
-tweakstreet_flows="${tweakstreet_home}/flows"
-
-# local folder containing JDBC drivers
+data_folder="data"
 drivers_folder="drivers"
 
-# container folder for JDBC drivers
+# container folders (drivers for JDBC drivers)
+tweakstreet_flows="${tweakstreet_home}/flows"
+tweakstreet_data="${tweakstreet_home}/data"
 tweakstreet_drivers="${tweakstreet_home}/.tweakstreet/drivers"
 
 # start of build
@@ -36,11 +33,12 @@ container=$(buildah --name "${working_container}" from ${base_image_tag})
 
 # copy required files
 buildah copy $container "${flows_folder}/" "${tweakstreet_flows}"
+buildah copy $container "${data_folder}/" "${tweakstreet_data}"
 buildah copy $container "${drivers_folder}/" "${tweakstreet_drivers}"
 
 # configuration
 buildah config --author "${image_author}" $container
-buildah config --workingdir "${application_folder_root}" $container
+buildah config --workingdir "${tweakstreet_flows}" $container
 
 buildah commit $container "${image_name}:${image_version}"
 buildah rm $container

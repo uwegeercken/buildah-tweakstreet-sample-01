@@ -25,7 +25,1372 @@
   },
   "steps": [
     {
-      "id": "com.twineworks.tweakstreet.library.steps.map.logger_5ac8e140-8d43-486b-9c6f-4ab3b6ffdc6f",
+      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_e86fbfc7-8482-46fa-a0b8-5dd6ac9b1712",
+      "name": "CSV Input: Airports",
+      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Input: Airports",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "${$config.vars.data_folder}/airports.csv",
+            "dialogIntent": "openFile"
+          },
+          "code": "let {\n  string interpolation_0: $config.vars.data_folder;\n  string literal_1: '/airports.csv';\n}\ninterpolation_0 .. literal_1"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "textFileContent": {
+          "text": "",
+          "fetchButton": {
+            "value": "100"
+          },
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": true
+          }
+        },
+        "skipLines": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "0"
+          },
+          "code": "0"
+        },
+        "rowLimit": {
+          "widgetType": "expression/nil",
+          "widgetData": {},
+          "code": "nil"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "tab"
+          },
+          "code": "\"\\t\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "hasHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": true
+          },
+          "code": "true"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "id",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "id"
+                  },
+                  "code": "'id'"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "name"
+                  },
+                  "code": "'name'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "description"
+                  },
+                  "code": "'description'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "country_id",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "country_id"
+                  },
+                  "code": "'country_id'"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              },
+              {
+                "name": "iata_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "iata_code"
+                  },
+                  "code": "'iata_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "icao_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "icao_code"
+                  },
+                  "code": "'icao_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "latitude",
+                "type": "decimal",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "latitude"
+                  },
+                  "code": "'latitude'"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "#,##0.#"
+                      },
+                      "code": "'#,##0.#'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('#,##0.#', 'en-US', true, '', true)\n"
+                }
+              },
+              {
+                "name": "longitude",
+                "type": "decimal",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "longitude"
+                  },
+                  "code": "'longitude'"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "#,##0.#"
+                      },
+                      "code": "'#,##0.#'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('#,##0.#', 'en-US', true, '', true)\n"
+                }
+              },
+              {
+                "name": "elevation",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "elevation"
+                  },
+                  "code": "'elevation'"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 426,
+        "y": 138
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.input.csvinput_f3f803e2-ec22-4896-af56-691470f8453f",
+      "name": "CSV Input: Countries",
+      "type": "com.twineworks.tweakstreet.library.steps.input.csvinput",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "CSV Input: Countries",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "tabs": {},
+        "fs": {
+          "widgetType": "expression/storage-ref",
+          "widgetData": {
+            "name": ""
+          },
+          "code": "nil"
+        },
+        "file": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "${$config.vars.data_folder}/countries.csv",
+            "dialogIntent": "openFile"
+          },
+          "code": "let {\n  string interpolation_0: $config.vars.data_folder;\n  string literal_1: '/countries.csv';\n}\ninterpolation_0 .. literal_1"
+        },
+        "compression": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/compression",
+            "value": "none"
+          },
+          "code": "'none'"
+        },
+        "charset": {
+          "widgetType": "expression/charset",
+          "widgetData": {
+            "value": "UTF-8"
+          },
+          "code": "'UTF-8'"
+        },
+        "textFileContent": {
+          "text": "",
+          "fetchButton": {
+            "value": "100"
+          },
+          "size": {
+            "width": 0,
+            "height": 180
+          },
+          "editor": {
+            "collapsed": true
+          }
+        },
+        "skipLines": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "0"
+          },
+          "code": "0"
+        },
+        "rowLimit": {
+          "widgetType": "expression/nil",
+          "widgetData": {},
+          "code": "nil"
+        },
+        "fieldSeparator": {
+          "widgetType": "expression/separator",
+          "widgetData": {
+            "value": "tab"
+          },
+          "code": "\"\\t\""
+        },
+        "fieldEncloser": {
+          "widgetType": "expression/string",
+          "widgetData": {
+            "interpolation": true,
+            "text": ""
+          },
+          "code": "''"
+        },
+        "hasHeaderLine": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": true
+          },
+          "code": "true"
+        },
+        "readFields": {
+          "readFields": {
+            "list": [
+              {
+                "name": "id",
+                "type": "long",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "id"
+                  },
+                  "code": "'id'"
+                },
+                "conversion": {
+                  "widgetType": "expression/parse-number",
+                  "widgetData": {
+                    "pattern": {
+                      "widgetType": "expression/number-pattern",
+                      "widgetData": {
+                        "value": "0"
+                      },
+                      "code": "'0'"
+                    },
+                    "locale": {
+                      "widgetType": "expression/locale",
+                      "widgetData": {
+                        "value": "en-US"
+                      },
+                      "code": "'en-US'"
+                    },
+                    "trim": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": true
+                      },
+                      "code": "true"
+                    },
+                    "nilValue": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": ""
+                      },
+                      "code": "''"
+                    },
+                    "parseDecimal": {
+                      "widgetType": "expression/checkbox-boolean",
+                      "widgetData": {
+                        "value": false
+                      },
+                      "code": "false"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_parser: (string pattern, string locale, boolean trim, string nilValue, boolean parseDecimal) -> function via {:class 'com.twineworks.tweakstreet.library.conversion.Parsers$number_parser'};\n}\nmake_parser('0', 'en-US', true, '', false)\n"
+                }
+              },
+              {
+                "name": "country_iata_code",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "iata_code"
+                  },
+                  "code": "'iata_code'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              },
+              {
+                "name": "country_name",
+                "type": "string",
+                "mapping": {
+                  "widgetType": "expression/string",
+                  "widgetData": {
+                    "interpolation": true,
+                    "text": "name"
+                  },
+                  "code": "'name'"
+                },
+                "conversion": {
+                  "widgetType": "expression/nil",
+                  "widgetData": {},
+                  "code": "nil"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 426,
+        "y": 410
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.join.conditionjoin_57fb60c4-15c8-4725-8725-42e5766086cf",
+      "name": "Join on Condition: Country ID",
+      "type": "com.twineworks.tweakstreet.library.steps.join.conditionjoin",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Join on Condition: Country ID",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "tabs": {},
+        "method": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/joinMethod",
+            "value": "stream_left"
+          },
+          "code": "'stream_left'"
+        },
+        "inMemoryCapacity": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "1_000_000"
+          },
+          "code": "1_000_000"
+        },
+        "tmpFolder": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "",
+            "dialogIntent": "openFolder"
+          },
+          "code": "''"
+        },
+        "condition": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "left.country_id == right.id",
+            "size": {
+              "width": 0,
+              "height": 140
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "left.country_id == right.id"
+        },
+        "mode": {
+          "widgetType": "expression/select",
+          "widgetData": {
+            "family": "expression/select/joinMode",
+            "value": "left_outer"
+          },
+          "code": "'left_outer'"
+        },
+        "resultRowMode": {
+          "value": "left_right"
+        },
+        "leftFieldsPrefix": {
+          "value": ""
+        },
+        "rightFieldsPrefix": {
+          "value": ""
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 725,
+        "y": 284
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.group.groupby_23596168-19cb-496e-9486-b30e8f66e87f",
+      "name": "Group By: Country",
+      "type": "com.twineworks.tweakstreet.library.steps.group.groupby",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Group By: Country",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "groupFields": {
+          "groupFields": {
+            "list": [
+              {
+                "name": "country_name",
+                "type": "string",
+                "value": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "country_name"
+                      }
+                    }
+                  },
+                  "code": "::in.country_name"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "collatedGroups": {
+          "widgetType": "expression/checkbox-boolean",
+          "widgetData": {
+            "value": false
+          },
+          "code": "false"
+        },
+        "aggregationFields": {
+          "aggregationFields": {
+            "list": [
+              {
+                "name": "total_airports",
+                "type": "any",
+                "aggregation": {
+                  "widgetType": "expression/aggregate-count",
+                  "widgetData": {
+                    "nilHandling": {
+                      "widgetType": "expression/select",
+                      "widgetData": {
+                        "family": "expression/select/nilHandling",
+                        "value": "ignore"
+                      },
+                      "code": "'ignore'"
+                    },
+                    "nanHandling": {
+                      "widgetType": "expression/select",
+                      "widgetData": {
+                        "family": "expression/select/NaNHandling",
+                        "value": "ignore"
+                      },
+                      "code": "'ignore'"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_aggregator: (string nilHandling, string nanHandling) -> via {:class 'com.twineworks.tweakstreet.library.aggregation.Aggregators$count_aggregator'};\n}\nmake_aggregator('ignore', 'ignore')\n"
+                },
+                "subject": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "id"
+                      }
+                    }
+                  },
+                  "code": "::in.id"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showGroupFields": true,
+          "showResultVariables": false,
+          "showOutputFields": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 986,
+        "y": 282
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.sort.sort_8ffd4484-e126-4ca6-ad64-61099e5b16c6",
+      "name": "Sort",
+      "type": "com.twineworks.tweakstreet.library.steps.sort.sort",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Sort",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "inMemoryCapacity": {
+          "widgetType": "expression/number",
+          "widgetData": {
+            "text": "100_000"
+          },
+          "code": "100_000"
+        },
+        "tmpFolder": {
+          "widgetType": "expression/local-file",
+          "widgetData": {
+            "interpolation": true,
+            "text": "",
+            "dialogIntent": "openFolder"
+          },
+          "code": "''"
+        },
+        "sortOrders": {
+          "sortOrders": {
+            "list": [
+              {
+                "subject": {
+                  "widgetType": "expression/field-value-ref",
+                  "widgetData": {
+                    "fieldSelect": {
+                      "value": {
+                        "gate": "in",
+                        "name": "total_airports"
+                      }
+                    }
+                  },
+                  "code": "::in.total_airports"
+                },
+                "comparator": {
+                  "widgetType": "expression/compare-number",
+                  "widgetData": {
+                    "nonNumeric": {
+                      "widgetType": "expression/select",
+                      "widgetData": {
+                        "family": "expression/select/orderNonNumeric",
+                        "value": "nil_NaN_num"
+                      },
+                      "code": "'nil_NaN_num'"
+                    },
+                    "editor": {
+                      "collapsed": true
+                    },
+                    "model": {}
+                  },
+                  "code": "let {\n  make_comparator: (string nonNumeric) -> function via {:class 'com.twineworks.tweakstreet.library.sorting.Comparators$number_comparator'};\n}\nmake_comparator('nil_NaN_num')\n"
+                },
+                "direction": {
+                  "widgetType": "expression/select",
+                  "widgetData": {
+                    "family": "expression/select/orderDirection",
+                    "value": "descending"
+                  },
+                  "code": "'descending'"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1178,
+        "y": 282
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.bool.filter_0ff36a4f-bcfb-489e-a3d1-d01861fb40a6",
+      "name": "Filter",
+      "type": "com.twineworks.tweakstreet.library.steps.bool.filter",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Filter",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "condition": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "in.row_count <= 10",
+            "size": {
+              "width": 0,
+              "height": 36
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "in.row_count <= 10"
+        },
+        "editor": {
+          "showEntryVariables": false
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1546,
+        "y": 282
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.statefulcalculator_63224eb0-c36e-4666-8a65-dac1d45f5e7a",
+      "name": "Stateful Calculator",
+      "type": "com.twineworks.tweakstreet.library.steps.map.statefulcalculator",
+      "instanceCount": {
+        "widgetType": "expression/number",
+        "widgetData": {
+          "text": "1"
+        },
+        "code": "1"
+      },
+      "data": {
+        "meta": {
+          "name": "Stateful Calculator",
+          "showingComment": false,
+          "comment": {
+            "markdown": {
+              "text": {
+                "text": "",
+                "syntax": "markdown",
+                "size": {
+                  "width": "100%",
+                  "height": "100%"
+                }
+              },
+              "size": {
+                "width": null,
+                "height": 160
+              },
+              "view": "edit"
+            },
+            "editor": {
+              "collapsed": true
+            }
+          }
+        },
+        "entryVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "initialState": {
+          "widgetType": "expression/dict",
+          "widgetData": {
+            "table": {
+              "list": [
+                {
+                  "key": {
+                    "widgetType": "expression/string",
+                    "widgetData": {
+                      "interpolation": true,
+                      "text": "row_count"
+                    },
+                    "code": "'row_count'"
+                  },
+                  "value": {
+                    "widgetType": "expression/number",
+                    "widgetData": {
+                      "text": "0"
+                    },
+                    "code": "0"
+                  }
+                }
+              ]
+            }
+          },
+          "code": "{\n  'row_count' 0\n}"
+        },
+        "transform": {
+          "widgetType": "expression/code",
+          "widgetData": {
+            "text": "(any state, dict row) ->\n  {\n    :row_count state[:row_count]+1\n  }\n",
+            "size": {
+              "width": 0,
+              "height": 95
+            },
+            "syntax": "tweakflow"
+          },
+          "code": "(any state, dict row) ->\n  {\n    :row_count state[:row_count]+1\n  }"
+        },
+        "resultVariables": {
+          "variables": {
+            "list": []
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "outputFields": {
+          "outputFields": {
+            "list": [
+              {
+                "name": "row_count",
+                "type": "long",
+                "value": {
+                  "widgetType": "expression/code",
+                  "widgetData": {
+                    "text": "results.state[:row_count]",
+                    "size": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "syntax": "tweakflow"
+                  },
+                  "code": "results.state[:row_count]"
+                }
+              }
+            ]
+          },
+          "editor": {
+            "collapsed": false
+          }
+        },
+        "editor": {
+          "showEntryVariables": false,
+          "showResultVariables": false,
+          "showOutputFields": true
+        },
+        "model": {}
+      },
+      "pos": {
+        "x": 1354,
+        "y": 282
+      }
+    },
+    {
+      "id": "com.twineworks.tweakstreet.library.steps.map.logger_00772868-8ed9-476d-83d9-bbafad1fb2c4",
       "name": "Logger",
       "type": "com.twineworks.tweakstreet.library.steps.map.logger",
       "instanceCount": {
@@ -69,18 +1434,12 @@
           }
         },
         "message": {
-          "widgetType": "expression/text",
+          "widgetType": "expression/string",
           "widgetData": {
-            "text": "Log info from the docker image",
-            "size": {
-              "width": 0,
-              "height": 68
-            },
-            "syntax": "text",
-            "lineSeparator": "\n",
-            "interpolation": true
+            "interpolation": true,
+            "text": "Country"
           },
-          "code": "'Log info from the docker image'"
+          "code": "'Country'"
         },
         "logValues": {
           "widgetType": "expression/data-grid",
@@ -108,28 +1467,44 @@
                       "widgetType": "expression/string",
                       "widgetData": {
                         "interpolation": true,
-                        "text": "row_nr"
+                        "text": "name"
                       },
-                      "code": "'row_nr'"
+                      "code": "'name'"
                     },
                     "value": {
-                      "widgetType": "expression/field-value-ref",
+                      "widgetType": "expression/string",
                       "widgetData": {
-                        "fieldSelect": {
-                          "value": {
-                            "gate": "in",
-                            "name": "row_nr"
-                          }
-                        }
+                        "interpolation": true,
+                        "text": "${in.country_name}"
                       },
-                      "code": "::in.row_nr"
+                      "code": "let {\n  string interpolation_0: in.country_name;\n}\ninterpolation_0"
+                    }
+                  }
+                },
+                {
+                  "fields": {
+                    "name": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": "airports"
+                      },
+                      "code": "'airports'"
+                    },
+                    "value": {
+                      "widgetType": "expression/string",
+                      "widgetData": {
+                        "interpolation": true,
+                        "text": "${in.total_airports}"
+                      },
+                      "code": "let {\n  string interpolation_0: in.total_airports;\n}\ninterpolation_0"
                     }
                   }
                 }
               ]
             }
           },
-          "code": "[{\n  :name 'row_nr',\n  :value ::in.row_nr\n}]"
+          "code": "[{\n  :name 'name',\n  :value let {\n  string interpolation_0: in.country_name;\n}\ninterpolation_0\n}, {\n  :name 'airports',\n  :value let {\n  string interpolation_0: in.total_airports;\n}\ninterpolation_0\n}]"
         },
         "editor": {
           "showEntryVariables": false
@@ -137,107 +1512,106 @@
         "model": {}
       },
       "pos": {
-        "x": 522,
-        "y": 170
-      }
-    },
-    {
-      "id": "com.twineworks.tweakstreet.library.steps.flatmap.generaterows_64165feb-f50f-416b-b420-54ebdc7bb837",
-      "name": "Generate Rows",
-      "type": "com.twineworks.tweakstreet.library.steps.flatmap.generaterows",
-      "instanceCount": {
-        "widgetType": "expression/number",
-        "widgetData": {
-          "text": "1"
-        },
-        "code": "1"
-      },
-      "data": {
-        "meta": {
-          "name": "Generate Rows",
-          "showingComment": false,
-          "comment": {
-            "markdown": {
-              "text": {
-                "text": "",
-                "syntax": "markdown",
-                "size": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              },
-              "size": {
-                "width": null,
-                "height": 160
-              },
-              "view": "edit"
-            },
-            "editor": {
-              "collapsed": true
-            }
-          }
-        },
-        "entryVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "nrRows": {
-          "widgetType": "expression/number",
-          "widgetData": {
-            "text": "10"
-          },
-          "code": "10"
-        },
-        "resultVariables": {
-          "variables": {
-            "list": []
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "outputFields": {
-          "outputFields": {
-            "list": [
-              {
-                "name": "row_nr",
-                "type": "long",
-                "value": {
-                  "widgetType": "expression/result-ref",
-                  "widgetData": {
-                    "value": "::results.row_nr"
-                  },
-                  "code": "::results.row_nr"
-                }
-              }
-            ]
-          },
-          "editor": {
-            "collapsed": false
-          }
-        },
-        "editor": {
-          "showEntryVariables": false,
-          "showResultVariables": false,
-          "showOutputFields": true
-        },
-        "model": {}
-      },
-      "pos": {
-        "x": 250,
-        "y": 170
+        "x": 1770,
+        "y": 282
       }
     }
   ],
   "hops": [
     {
-      "id": "93163da7-f18d-4df9-b09b-377b7d66b0be",
-      "fromStep": "com.twineworks.tweakstreet.library.steps.flatmap.generaterows_64165feb-f50f-416b-b420-54ebdc7bb837",
-      "toStep": "com.twineworks.tweakstreet.library.steps.map.logger_5ac8e140-8d43-486b-9c6f-4ab3b6ffdc6f",
+      "id": "ab294e51-76f7-4a1c-89ae-27e252781d6e",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_e86fbfc7-8482-46fa-a0b8-5dd6ac9b1712",
+      "toStep": "com.twineworks.tweakstreet.library.steps.join.conditionjoin_57fb60c4-15c8-4725-8725-42e5766086cf",
+      "fromGate": "out",
+      "toGate": "left",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "c8356638-7b06-42f6-a0ab-7662148d896d",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.input.csvinput_f3f803e2-ec22-4896-af56-691470f8453f",
+      "toStep": "com.twineworks.tweakstreet.library.steps.join.conditionjoin_57fb60c4-15c8-4725-8725-42e5766086cf",
+      "fromGate": "out",
+      "toGate": "right",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "0ff8f9ae-4535-4da0-8c69-76eae4933ff2",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.join.conditionjoin_57fb60c4-15c8-4725-8725-42e5766086cf",
+      "toStep": "com.twineworks.tweakstreet.library.steps.group.groupby_23596168-19cb-496e-9486-b30e8f66e87f",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "19b0688c-e8df-4667-9100-5d4826ad2f83",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.bool.filter_0ff36a4f-bcfb-489e-a3d1-d01861fb40a6",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.logger_00772868-8ed9-476d-83d9-bbafad1fb2c4",
+      "fromGate": "yes",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "90d2ae61-ede8-459c-9abe-39c56710a2cc",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.group.groupby_23596168-19cb-496e-9486-b30e8f66e87f",
+      "toStep": "com.twineworks.tweakstreet.library.steps.sort.sort_8ffd4484-e126-4ca6-ad64-61099e5b16c6",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "ea5ae7cc-50b6-443e-9d68-5893f6474fad",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.sort.sort_8ffd4484-e126-4ca6-ad64-61099e5b16c6",
+      "toStep": "com.twineworks.tweakstreet.library.steps.map.statefulcalculator_63224eb0-c36e-4666-8a65-dac1d45f5e7a",
+      "fromGate": "out",
+      "toGate": "in",
+      "disabled": false,
+      "partitioner": {
+        "widgetType": "expression/code",
+        "widgetData": {
+          "text": ""
+        },
+        "code": "nil"
+      }
+    },
+    {
+      "id": "76a24b4b-649e-4e64-88a8-752ef7eed1d9",
+      "fromStep": "com.twineworks.tweakstreet.library.steps.map.statefulcalculator_63224eb0-c36e-4666-8a65-dac1d45f5e7a",
+      "toStep": "com.twineworks.tweakstreet.library.steps.bool.filter_0ff36a4f-bcfb-489e-a3d1-d01861fb40a6",
       "fromGate": "out",
       "toGate": "in",
       "disabled": false,
